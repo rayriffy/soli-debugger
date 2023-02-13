@@ -16,7 +16,7 @@
     <h1 class="font-bold text-4xl">Soli debugger</h1>
     <p class="text-sm">This tool will emit raw <code class="px-2 bg-gray-200 rounded-md">onSoliEvent</code> everytime when function is called</p>
   </section>
-  {#if isSoliSensorAvailable}
+  {#if !isSoliSensorAvailable}
     <Sensor />
   {:else}
     <Unavailable />

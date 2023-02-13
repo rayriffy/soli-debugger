@@ -8,7 +8,6 @@
   import type { SoliEvent } from '../@types/SoliEvent'
 
 	let eventCount: number = 0
-	let maxRow: number = 50
 	let captureDataItems: EventItem[] = []
 
 	let selectedEvents: SoliEvent[] = ['swipe', 'tap', 'reach', 'presence']
@@ -26,7 +25,7 @@
 					data: event,
 				},
 				...captureDataItems,
-			].slice(0, maxRow)
+			]
 
 			lastTimestamp = newTimestamp
 			eventCount++

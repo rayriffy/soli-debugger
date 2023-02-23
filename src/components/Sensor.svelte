@@ -60,6 +60,15 @@
 	{#if captureDataItems.length === 0}
 		<div class="font-mono">Waiting for events...</div>
 	{:else}
+		{#if selectedEvents.includes('presence')}
+			<div class="px-6 pb-4 pt-7 border rounded-xl shadow-lg relative font-mono bg-black text-white text-xs">
+				<span
+					class="absolute top-0 bg-white py-0.5 px-3 left-4 rounded-b-md text-black select-none"
+					>presense distance</span
+				>
+				<h1 class="text-xl">{captureDataItems.find(o => o.data.type === 'presence').data?.data?.distance}</h1>
+			</div>
+		{/if}
 		{#each filteredSoliEvents(captureDataItems, selectedEvents) as item (item.id)}
 			<div
 				class="px-6 pb-4 pt-7 border rounded-xl shadow-lg relative font-mono text-xs overflow-hidden"
